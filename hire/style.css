@@ -28,7 +28,7 @@ body::before {
     width: 50%;
 }
     background: var(--color-black);
-    background-image: linear-gradient( rgba(0, 0, 0,0.7), rgba(14, 158, 17, 0.4), rgba(12, 232, 170, 0.3) ), url(https://2.bp.blogspot.com/-T4HsBoSbqus/WO0j1zpGWdI/AAAAAAAAAbg/Uz93sUHvIsgQTzH73VnGZSpeIh_zJtL2ACEw/s1600/1c8d4d29940709.560b8162bdfd0.gif);
+    background-image: linear-gradient( rgba(0, 0, 0,0.7), rgba(14, 158, 17, 0.4), rgba(12, 232, 170, 0.3) ), url(../../img/backgroundimage.jpg);
     background-size:600px
     background-repeat: no-repeat;
     background-position: center;
