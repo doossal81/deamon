@@ -28,7 +28,7 @@ body::before {
     width: 50%;
 }
     background: var(--color-black);
-    background-image: linear-gradient( rgba(0, 0, 0,0.7), rgba(14, 158, 17, 0.4), rgba(12, 232, 170, 0.3) ), url(../../img/backgroundimage.jpg);
+    background-image: linear-gradient( rgba(0, 0, 0,0.7), rgba(14, 158, 17, 0.4), rgba(12, 232, 170, 0.3) ), url(../../images/bg-home.jpg);
     background-size:600px
     background-repeat: no-repeat;
     background-position: center;
