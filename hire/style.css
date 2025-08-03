@@ -3,13 +3,7 @@
   --color-green: #00ff00;
   --color-black: #000000;
 }
-body {
-    text-align: center;
-    font-size: 1rem;
-    line-height: 1.4;
-    color: var(--color-green);
-    margin: 0;
-}
+
 
 body::before {
     content: '';
