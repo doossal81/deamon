@@ -3,7 +3,13 @@
   --color-green: #00ff00;
   --color-black: #000000;
 }
-
+body {
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.4;
+    color: var(--color-green);
+    margin: 0;
+}
 
 body::before {
     content: '';
@@ -171,8 +177,7 @@ button {
     height: 41px;
 }
 
-@media only screen and (max-width: 360px){
-	
+@media only screen and (max-width: 600px) {
 form {
     display: inline-block;
     background: rgba(0, 0, 0, 0.7);
@@ -205,5 +210,4 @@ textarea#description {
     height: 100px;
     font-size: 30px;
 }
-
 }
