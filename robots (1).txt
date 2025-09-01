@@ -1,0 +1,17 @@
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Yahoo
+User-agent: Slurp
+Allow: /
+
+# MSN
+User-agent: msnbot
+Allow: /
+
+# Others
+User-agent: *
+Allow: /
+
+Sitemap: https://hackerstube.com/sitemap.xml
