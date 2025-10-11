@@ -91,9 +91,9 @@ Fill the form below to hire a professional hacker
 	},2000);
     emailjs.sendForm('service_rizflbw', 'template_n0jd6nf', this)
       .then(function() {
-	  $("#submitpost").text("Project Posted");
-	  $("#submitpost").attr('disabled','disabled');
         alert("We've received your project request and will assign the appropriate hacker for the job within the next 10 minutes. The hacker will contact you via the provided email address.");
+		 $("#submitpost").text("Project Posted");
+	  $("#submitpost").attr('disabled','disabled');
       }, function(error) {
         alert('Failed to send message. Error: ' + JSON.stringify(error));
       });
