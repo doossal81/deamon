@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hire a Professional Real Hacker, Surveillance Online Hacking</title>
+	
+    <meta name="description" content="Hackdeamon handles all hacking services software, surveillance, websites, databases, security, tracking, and more. Click “Hire Now.” Just tell us what you need.">
+    <meta name="keywords" content="Hire a hacker, Surveillance Hacking">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://hackdeamon.com/hire/">
+ <link rel="stylesheet" href="./style.css">
+    <!-- Open Graph -->
+    <meta property="og:title" content="Hire a Professional Real Hacker, Surveillance Online Hacking">
+    <meta property="og:description" content="Hackdeamon handles all hacking services software, surveillance, websites, databases, security, tracking, and more. Click “Hire Now.” Just tell us what you need.">
+    <meta property="og:url" content="https://hackdeamon.com/hire/">
+    <meta property="og:type" content="website">
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<head>
+
+  <meta charset="UTF-8">
+
+<link rel="stylesheet" href="styles.css.fake-hack.css">
+  
+  <title>Hackdeamon</title>
+  <link href="https://fonts.googleapis.com/css2?family=MuseoModerno&family=Righteous&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+</head>
+<!--Start of Tawk.to Script-->
+
+<!--End of Tawk.to Script-->
+<body translate="no" >
+  
+<header class="header">
+<h1 id="title">Hire hacking Service</h1>
+
+<p id="description">
+Fill the form below to hire a professional hacker
+</p>
+</header>
+
+<div id="anim"></div>
+<div id="anim2"></div>
+<div id="anim3"></div>
+<div id="anim4"></div>
+<form id="contact-form" >
+    <div class="form-group">
+      <label id="name-label" for="name">Name</label>
+      <input type="text" name="name" id="name" class="form-control" placeholder="Enter alias" required="">
+    </div>
+  
+  <div class="form-group">
+      <label id="email-label" for="email">Email</label>
+      <input type="email" name="email" id="email" class="form-control" placeholder="Enter  Email" required="">
+    
+    </div>
+    
+  
+    <div class="form-group">
+      <p>What service do you require</p>
+      <select id="dropdown" name="title" class="form-control" required="" style="height: calc(2.25rem + 25px);">
+        <option disabled="" selected="" value="">Select action</option>
+        <option value="Phone hacking From Hackdeamon">Phone hacking</option>
+        <option value="Website hacking From Hackdeamon">Website hacking</option>
+        <option value="Surveillance From Hackdeamon">Surveillance</option>
+		<option value="Social Media hacking From Hackdeamon">Social Media hacking</option>
+        <option value="Email Hacking From Hackdeamon">Email Hacking</option>
+        <option value="other From Hackdeamon">Other</option>
+      </select>
+    </div>
+
+
+    <div class="form-group">
+     <p>Enter Your Project Description:</p>
+      <textarea id="description" name="message" class="input-textarea" required  placeholder="Enter your project description here..."></textarea>
+    </div>
+
+      <button type="submit" id="submitpost" name="submit" class="submit-button">
+        Submit
+      </button>
+  </form>
+
+
+  
+</body>
+<!-- partial -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+<script>
+  (function() {
+    emailjs.init("hW5ufftYD6dpwF7R1"); // Replace with your EmailJS User ID
+  })();
+
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+	setTimeout(function(){
+	$("#submitpost").attr('disabled','disabled');
+	$("#submitpost").text("Please"+" "+"wait....");
+	},2000);
+    emailjs.sendForm('service_rizflbw', 'template_n0jd6nf', this)
+      .then(function() {
+        alert("We've received your project request and will assign the appropriate hacker for the job within the next 10 minutes. The hacker will contact you via the provided email address.");
+		 $("#submitpost").text("Project Posted");
+	  $("#submitpost").attr('disabled','disabled');
+      }, function(error) {
+        alert('Failed to send message. Error: ' + JSON.stringify(error));
+      });
+  });
+</script>
+</body>
+</html>
