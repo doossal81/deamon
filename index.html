@@ -179,314 +179,67 @@ Click “Hire Now” Just tell us what you need. We’ll get in touch immediatel
     <script src="js/main.min.js"></script>
 <script async src='https://www.googletagmanager.com/gtag/js?id=G-CFBJNKSYBN'></script><script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-CFBJNKSYBN', { 'anonymize_ip': true });</script>
 <style>
-  :root{
-    --wa-bg: #25D366;
-    --wa-accent: #128C7E;
-    --wa-white: #ffffff;
-    --wa-shadow: 0 6px 18px rgba(0,0,0,.16);
-    --wa-font: "Inter", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    --wa-size: 64px;
-    --wa-radius: 14px;
-  }
-
-  /* floating button */
-  .wa-widget {
-    position: fixed;
-    right: 20px;
-    bottom: 20px;
-    z-index: 99999;
-    font-family: var(--wa-font);
-  }
-
-  .wa-fab {
-    width: var(--wa-size);
-    height: var(--wa-size);
-    border-radius: 50%;
-    background: linear-gradient(180deg,var(--wa-bg),var(--wa-accent));
-    box-shadow: var(--wa-shadow);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    cursor:pointer;
-    border: 0;
-    outline: none;
-    transition: transform .15s ease, box-shadow .15s ease;
-  }
-  .wa-fab:active{ transform: scale(.96); }
-  .wa-fab:hover{ box-shadow: 0 10px 26px rgba(0,0,0,.22); }
-
-  .wa-fab svg{ width:36px; height:36px; display:block; }
-
-  /* badge for unread (optional) */
-  .wa-badge {
-    position: absolute;
-    top: -6px;
-    right: -6px;
-    background: #ff3b30;
-    color: white;
-    font-size: 11px;
-    min-width: 20px;
-    height: 20px;
-    display:inline-flex;
-    align-items:center;
-    justify-content:center;
-    border-radius: 999px;
-    padding: 0 6px;
-    box-shadow: 0 2px 6px rgba(0,0,0,.12);
-  }
-
-  /* panel */
-  .wa-panel {
-    width: 320px;
-    max-width: calc(100vw - 40px);
-    background: var(--wa-white);
-    border-radius: 12px;
-    box-shadow: var(--wa-shadow);
-    margin-bottom: 12px;
-    overflow: hidden;
-    transform-origin: bottom right;
-    transition: transform .18s cubic-bezier(.2,.9,.3,1), opacity .12s ease;
-    opacity:0;
-    transform: translateY(12px) scale(.98);
-  }
-  .wa-panel.open{ opacity:1; transform: translateY(0) scale(1); }
-
-  .wa-header{
-    display:flex;
-    gap:12px;
-    align-items:center;
-    padding:12px 14px;
-    background: linear-gradient(90deg,var(--wa-bg),var(--wa-accent));
-    color:var(--wa-white);
-  }
-  .wa-header .wa-title{ font-weight:700; font-size:15px; }
-  .wa-header .wa-sub{ font-size:12px; opacity:.92; }
-
-  .wa-body{ padding:12px; font-size:14px; color:#0b0b0b; }
-  .wa-presets{ display:flex; flex-direction:column; gap:8px; margin-bottom:12px; }
-  .wa-preset{
-    background:#f6f7f8;
-    border-radius:8px;
-    padding:10px 12px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:12px;
-    cursor:pointer;
-    border:1px solid transparent;
-    transition: background .12s ease, border-color .12s ease;
-  }
-  .wa-preset:hover{ background:#eef3f2; border-color:#e0e6e5; }
-
-  .wa-input-row{ display:flex; gap:8px; align-items:center; }
-  .wa-input{
-    flex:1;
-    border-radius:10px;
-    padding:8px 10px;
-    border:1px solid #e6e6e6;
-    font-size:14px;
-  }
-  .wa-send{
-    background:var(--wa-bg);
-    color:var(--wa-white);
-    border-radius:10px;
-    padding:8px 12px;
-    border:0;
-    cursor:pointer;
-    display:inline-flex;
-    align-items:center;
-    gap:8px;
-  }
-  .wa-send:active{ transform: translateY(1px); }
-
-  .wa-footer{
-    padding:10px 12px;
-    border-top:1px solid #f0f0f0;
-    font-size:12px;
-    color:#666;
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-    gap:8px;
-  }
-
-  /* small screens: enlarge widget width a bit */
-  @media (max-width:480px){
-    .wa-panel{ width:92vw; right: 4vw; left: auto; }
-    .wa-fab{ width:56px; height:56px; }
-  }
-</style>
+      
+        .whatsapp-widget {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 9999;
+            animation: pulse 2s infinite;
+        }
+        .whatsapp-btn {
+            display: flex;
+            align-items: center;
+            background: #25D366;
+            color: white;
+            padding: 12px 18px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            transition: all 0.3s ease;
+            gap: 10px;
+        }
+        .whatsapp-btn:hover {
+            background: #1DA851;
+            transform: scale(1.05);
+            box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+        }
+        .whatsapp-icon {
+            width: 28px;
+            height: 28px;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.297-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.626.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 5.44h-.004c-1.574-.051-3.032-.56-4.292-1.44l-.308-.195-3.194.83.84-3.068-.197-.313c-.93-1.477-1.502-3.182-1.502-4.937 0-5.013 4.078-9.089 9.09-9.089 2.416 0 4.682 1.028 6.236 2.816 1.554 1.788 2.313 4.144 2.313 6.52 0 5.013-4.078 9.089-9.09 9.089m7.624-16.99c-1.885-2.168-4.375-3.36-7.032-3.36-5.486 0-9.947 4.46-9.947 9.947 0 1.756.458 3.467 1.33 4.966l-1.41 5.148 5.258-1.376c1.443.79 3.057 1.242 4.738 1.242 5.486 0 9.947-4.46 9.947-9.947 0-2.66-1.03-5.158-2.884-7.033"/></svg>') no-repeat center;
+            background-size: contain;
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+        .status {
+            font-size: 12px;
+            background: rgba(0,0,0,0.2);
+            padding: 2px 6px;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
 
-<!-- Widget container -->
-<div class="wa-widget" aria-live="polite">
-  <!-- Panel (hidden by default) -->
-  <div id="waPanel" class="wa-panel" role="dialog" aria-label="WhatsApp chat widget" aria-hidden="true">
-    <div class="wa-header">
-      <div style="display:flex;flex-direction:column;">
-        <div class="wa-title">Chat with us on WhatsApp</div>
-        <div class="wa-sub">Fast replies — click a quick message or write your own</div>
-      </div>
+    <!-- Floating WhatsApp Hire-a-Hacker Widget -->
+    <div class="whatsapp-widget">
+        <a href="https://wa.me/message/NXC6H3XGDR73B1?text=Hello%2C%20I%20need%20to%20hire%20a%20professional%20hacker.%20Available%20now%3F" 
+           class="whatsapp-btn" 
+           target="_blank"
+           rel="noopener">
+            <div class="whatsapp-icon"></div>
+            <div>
+                <div>HIRE A HACKER</div>
+                <div class="status">● Online Now</div>
+            </div>
+        </a>
     </div>
-
-    <div class="wa-body">
-      <div class="wa-presets" id="waPresets" aria-hidden="false">
-        <!-- Preset messages (editable in JS) -->
-      </div>
-
-      <div class="wa-input-row" style="margin-top:6px;">
-        <input id="waInput" class="wa-input" type="text" placeholder="Write a message..." aria-label="Message text" />
-        <button id="waOpen" class="wa-send" title="Open WhatsApp">
-          Send
-        </button>
-      </div>
-    </div>
-
-    <div class="wa-footer">
-      <div>We typically reply within a few minutes</div>
-      <div style="opacity:.85">Powered by WhatsApp</div>
-    </div>
-  </div>
-
-  <!-- Floating button -->
-  <button id="waFab" class="wa-fab" aria-haspopup="dialog" aria-controls="waPanel" aria-expanded="false" title="Chat on WhatsApp">
-    <!-- WhatsApp icon (SVG) -->
-    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true" focusable="false">
-      <path d="M20.5 3.5a10 10 0 1 0-16.3 11.4L2 22l7.2-2.2A10 10 0 0 0 20.5 3.5z" fill="#fff" opacity="0.03"/>
-      <path d="M16.1 7.9c-.2-.1-1.2-.6-1.4-.6-.2-.1-.3-.1-.5.1-.2.2-.8.6-1 .7-.2.1-.4.2-.6 0-.2-.2-.8-.5-1.6-.9-.6-.3-1-.1-1.3.1-.2.2-.9.8-.9 1.9s.9 2.2 1.1 2.3c.2.1 1.8 2.9 4.5 3.9 1.5.5 1.9.4 2.6.3.4-.1 1.2-.5 1.4-1.1.2-.6.2-1.3.1-1.4-.1-.1-.4-.2-.8-.4-.4-.2-1.2-.6-1.4-.7-.3-.1-.5-.1-.7.1-.2.2-.8.6-1 .7-.2.1-.4.2-.6 0-.2-.2-.8-.5-1.6-.9-.6-.3-1-.1-1.3.1-.2.2-.9.8-.9 1.9s.9 2.2 1.1 2.3" fill="#fff"/>
-    </svg>
-    <span class="wa-badge" id="waBadge" style="display:none">1</span>
-  </button>
-</div>
-
-<script>
-(function(){
-  // === CONFIG ===
-  // Replace with your wa.me link (you already provided this)
-  const WA_LINK = "https://wa.me/message/NXC6H3XGDR73B1";
-
-  // Preset quick messages (customize)
-  const PRESETS = [
-    {label: "Hello — I need help", text: "Hello, I need help with an order."},
-    {label: "Pricing question", text: "Hi — can you share pricing details?"},
-    {label: "Technical issue", text: "I'm experiencing an issue with my account."}
-  ];
-
-  // Accessibility text
-  const OPEN_NEW_TAB = true; // open link in new tab/window
-
-  // === UI refs ===
-  const fab = document.getElementById("waFab");
-  const panel = document.getElementById("waPanel");
-  const presetsContainer = document.getElementById("waPresets");
-  const input = document.getElementById("waInput");
-  const openBtn = document.getElementById("waOpen");
-  const badge = document.getElementById("waBadge");
-
-  // Build presets
-  function buildPresets(){
-    PRESETS.forEach((p, idx)=>{
-      const el = document.createElement("button");
-      el.type = "button";
-      el.className = "wa-preset";
-      el.innerHTML = `<span style="flex:1;text-align:left">${escapeHtml(p.label)}</span><small style="opacity:.8">Use</small>`;
-      el.addEventListener("click", ()=>{
-        input.value = p.text;
-        input.focus();
-      });
-      presetsContainer.appendChild(el);
-    });
-  }
-
-  // Open WhatsApp link with message (prefill)
-  function openWhatsApp(msg){
-    // encode message
-    const encoded = encodeURIComponent(msg||"");
-    const link = WA_LINK + (encoded ? "?text=" + encoded : "");
-    if (OPEN_NEW_TAB) window.open(link, "_blank", "noopener,noreferrer");
-    else window.location.href = link;
-  }
-
-  // Toggle panel
-  function togglePanel(show){
-    const isOpen = panel.classList.contains("open");
-    if(show === undefined) show = !isOpen;
-    if(show){
-      panel.classList.add("open");
-      panel.setAttribute("aria-hidden","false");
-      fab.setAttribute("aria-expanded","true");
-    } else {
-      panel.classList.remove("open");
-      panel.setAttribute("aria-hidden","true");
-      fab.setAttribute("aria-expanded","false");
-    }
-  }
-
-  // Escape HTML helper
-  function escapeHtml(s){
-    return String(s).replace(/[&<>"']/g, function(m){ return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[m]; });
-  }
-
-  // Send handler
-  openBtn.addEventListener("click", function(){
-    const msg = input.value.trim();
-    if(!msg){
-      // small shake animation to hint required
-      input.animate([{transform:"translateX(0)"},{transform:"translateX(-6px)"},{transform:"translateX(6px)"},{transform:"translateX(0)"}], {duration:240});
-      input.focus();
-      return;
-    }
-    openWhatsApp(msg);
-    // optional: clear input and close panel
-    input.value = "";
-    togglePanel(false);
-    showBadge(false);
-  });
-
-  // Fab actions
-  fab.addEventListener("click", function(e){
-    e.stopPropagation();
-    togglePanel();
-  });
-
-  // close panel when clicking outside
-  document.addEventListener("click", function(e){
-    if(!panel.contains(e.target) && !fab.contains(e.target)){
-      togglePanel(false);
-    }
-  });
-
-  // keyboard escape closes
-  document.addEventListener("keydown", function(e){
-    if(e.key === "Escape") togglePanel(false);
-  });
-
-  // Show/hide badge helper
-  function showBadge(on){
-    badge.style.display = on ? "inline-flex" : "none";
-  }
-
-  // initialize
-  buildPresets();
-  showBadge(false);
-
-  // Optional: show small pulse if unread or promotion
-  setTimeout(()=> {
-    // brief pulse to attract attention (run once)
-    fab.animate([{transform:"scale(1)"},{transform:"scale(1.06)"},{transform:"scale(1)"}], {duration:900, iterations:1});
-  }, 1200);
-
-  // Expose quick API (optional)
-  window.WhatsAppWidget = {
-    open: ()=> togglePanel(true),
-    close: ()=> togglePanel(false),
-    sendMessage: openWhatsApp,
-    showBadge: ()=> showBadge(true),
-    hideBadge: ()=> showBadge(false)
-  };
-})();
-</script>
   
 <style>@import url(https://fonts.googleapis.com/css2?family=Inter:wght@500&amp;display=swap);.banner-outer{position:fixed;bottom:0;right:0;width:100%;z-index:60}.banner-inner{display:flex;justify-items:center;align-items:center;background:#0f172a;padding:12px 16px;border-radius:2px;font-size:14px;font-family:Inter,sans-serif;font-weight:500;box-shadow:0 10px 15px -3px rgb(0 0 0 / .1),0 4px 6px -4px rgb(0 0 0 / .1)}.banner-link{flex-grow:1;display:flex;color:#04ff00;justify-items:center;align-items:center;text-decoration:none;}.banner-link:hover{text-decoration:none}.banner-link>svg{margin-left:8px}.banner-inner button{font-family:inherit;font-size:100%;font-weight:inherit;line-height:inherit;color:inherit;margin:0;padding:0;margin-left:24px;padding-left:8px;border:none;cursor:pointer;border-left:1px solid #334155;-webkit-appearance:button;background-color:transparent;background-image:none}.banner-inner button span{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border-width:0}@media screen and (min-width:768px){.banner-outer{bottom:32px;right:48px;width:auto}}</style><script>function closeBanner(){document.getElementById("banner").remove()}</script>
 <script defer src="https://static.cloudflareinsights.com/beacon.min.js/vcd15cbe7772f49c399c6a5babf22c1241717689176015" integrity="sha512-ZpsOmlRQV6y907TI0dKBHq9Md29nnaEIPlkf84rnaERnq6zvWvPUqr2ft8M1aS28oN72PdrCzSjY4U6VaAw1EQ==" data-cf-beacon='{"rayId":"8cd02fa8dc18726f","version":"2024.8.0","r":1,"serverTiming":{"name":{"cfExtPri":true,"cfL4":true}},"token":"59cc17d45d734f9ba118c63036ab1b84","b":1}' crossorigin="anonymous"></script>
