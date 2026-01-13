@@ -88,11 +88,9 @@
 // Never put your real keys in GitHub/public code!
 // Use environment variables or a backend proxy in production
 // ────────────────────────────────────────────────
-(function(){
-  emailjs.init({
-    publicKey: "hW5ufftYD6dpwF7R1"   // ← still visible, but official v4 syntax
-  });
-})();
+(function() {
+    emailjs.init("hW5ufftYD6dpwF7R1"); // Replace with your EmailJS User ID
+  })();
 // ────────────────────────────────────────────────
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('contact-form');
