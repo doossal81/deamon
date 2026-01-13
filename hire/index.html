@@ -87,10 +87,11 @@
   })();
 
   document.getElementById('contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-	setTimeout(function(){
+  setTimeout(function(){
 	$("#submitpost").attr('disabled','disabled');
 	$("#submitpost").text("Please"+" "+"wait....");
+	 
+    e.preventDefault();
 	
     emailjs.sendForm('service_rizflbw', 'template_n0jd6nf', this)
       .then(function() {
@@ -100,7 +101,7 @@
       }, function(error) {
         alert('Failed to send message. Error: ' + JSON.stringify(error));
       });
-	   },2000);
+	  },2000);
   });
  
 </script>
