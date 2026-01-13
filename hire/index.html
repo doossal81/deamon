@@ -81,11 +81,25 @@
     <p>&copy; 2025 Hackdeamon | <a href="/">Back to Home</a></p>
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+<script>
+// ────────────────────────────────────────────────
+// Do this ONLY ONCE when the page loads
+// Never put your real keys in GitHub/public code!
+// Use environment variables or a backend proxy in production
+// ────────────────────────────────────────────────
+(function(){
+  emailjs.init({
+    publicKey: "hW5ufftYD6dpwF7R1"   // ← still visible, but official v4 syntax
+  });
+})();
+</script>
 <script>
 
 // ────────────────────────────────────────────────
 // Proper form submission handler – put this in <script> tag
 // ────────────────────────────────────────────────
+
 document.addEventListener('DOMContentLoaded', () => {
   const form = document.getElementById('contact-form');
   const btn  = document.getElementById('submitpost');
