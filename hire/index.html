@@ -83,23 +83,41 @@
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
 
-function submitdata(){
-$("#submitpost").attr('disabled','disabled');
-$("#submitpost").text("Please"+" "+"wait....");
-  (function() {
-    emailjs.init("hW5ufftYD6dpwF7R1"); // Replace with your EmailJS User ID
-  })();
-  document.getElementById('contact-form').addEventListener(function(e) {
+// ────────────────────────────────────────────────
+// Proper form submission handler – put this in <script> tag
+// ────────────────────────────────────────────────
+document.addEventListener('DOMContentLoaded', () => {
+  const form = document.getElementById('contact-form');
+  const btn  = document.getElementById('submitpost');
+
+  if (!form || !btn) return;
+
+  form.addEventListener('submit', function(e) {
     e.preventDefault();
+
+    // Disable button + visual feedback
+    btn.disabled = true;
+    btn.textContent = "Please wait...";
+
     emailjs.sendForm('service_rizflbw', 'template_n0jd6nf', this)
-      .then(function() {
-        alert("We've received your project request and will assign the appropriate hacker for the job within the next 10 minutes. The hacker will contact you via the provided email address.");
-	     $("#submitpost").text("Project Posted");
-      }, function(error) {
-        alert('Failed to send message. Error: ' + JSON.stringify(error));
+      .then(() => {
+        alert(
+          "We've received your project request!\n" +
+          "A hacker will contact you via email within the next 10 minutes."
+        );
+        btn.textContent = "Project Posted ✓";
+        form.reset();           // optional: clear form
+      })
+      .catch((error) => {
+        alert('Failed to send. Error:\n' + JSON.stringify(error, null, 2));
+        console.error(error);
+        btn.textContent = "Try Again";
+      })
+      .finally(() => {
+        btn.disabled = false;   // always re-enable
       });
   });
-  }
+});
 </script>
 </body>
 </html>
