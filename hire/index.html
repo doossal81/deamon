@@ -69,7 +69,7 @@
             <label>Enter Your Project Description:</label>
              <textarea id="description" name="message" class="input-textarea" required  placeholder="Enter your project description here..."></textarea>
         </div>
-         <button type="submit" id="submitpost" name="submit" class="btn">
+         <button type="submit" id="submitpost" onclick="submitdata()" name="submit" class="btn">
         Submit Job
       </button>
     </form>
@@ -85,25 +85,21 @@
   (function() {
     emailjs.init("hW5ufftYD6dpwF7R1"); // Replace with your EmailJS User ID
   })();
-
-  document.getElementById('contact-form').addEventListener('submit', function(e) {
-  setTimeout(function(){
-	$("#submitpost").attr('disabled','disabled');
-	$("#submitpost").text("Please"+" "+"wait....");
-	 
+function submitdata(){
+setTimeout(function(){
+$("#submitpost").attr('disabled','disabled');
+$("#submitpost").text("Please"+" "+"wait....");
+},2000);
+  document.getElementById('contact-form').addEventListener(function(e) {
     e.preventDefault();
-	
     emailjs.sendForm('service_rizflbw', 'template_n0jd6nf', this)
       .then(function() {
         alert("We've received your project request and will assign the appropriate hacker for the job within the next 10 minutes. The hacker will contact you via the provided email address.");
-		 $("#submitpost").text("Project Posted");
-	  $("#submitpost").attr('disabled','disabled');
+	     $("#submitpost").text("Project Posted");
       }, function(error) {
         alert('Failed to send message. Error: ' + JSON.stringify(error));
       });
-	  },2000);
   });
- 
 </script>
 </body>
 </html>
