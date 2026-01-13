@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
     <!-- Meta Tags for https://hackdeamon.com/hire/ -->
@@ -88,10 +87,11 @@
   })();
 
   document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
 	setTimeout(function(){
 	$("#submitpost").attr('disabled','disabled');
 	$("#submitpost").text("Please"+" "+"wait....");
-	},2000);
+	
     emailjs.sendForm('service_rizflbw', 'template_n0jd6nf', this)
       .then(function() {
         alert("We've received your project request and will assign the appropriate hacker for the job within the next 10 minutes. The hacker will contact you via the provided email address.");
@@ -100,7 +100,9 @@
       }, function(error) {
         alert('Failed to send message. Error: ' + JSON.stringify(error));
       });
+	   },2000);
   });
+ 
 </script>
 </body>
 </html>
