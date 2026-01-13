@@ -82,14 +82,13 @@
 </footer>
 <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
+
+function submitdata(){
+$("#submitpost").attr('disabled','disabled');
+$("#submitpost").text("Please"+" "+"wait....");
   (function() {
     emailjs.init("hW5ufftYD6dpwF7R1"); // Replace with your EmailJS User ID
   })();
-function submitdata(){
-setTimeout(function(){
-$("#submitpost").attr('disabled','disabled');
-$("#submitpost").text("Please"+" "+"wait....");
-},2000);
   document.getElementById('contact-form').addEventListener(function(e) {
     e.preventDefault();
     emailjs.sendForm('service_rizflbw', 'template_n0jd6nf', this)
